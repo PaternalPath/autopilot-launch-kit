@@ -1,4 +1,4 @@
-import { forwardRef, type InputHTMLAttributes, type ReactNode } from "react";
+import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from "react";
 
 /**
  * Input props
@@ -45,7 +45,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     // Generate a unique ID if not provided
-    const inputId = id || `input-${Math.random().toString(36).slice(2, 9)}`;
+    const generatedId = useId();
+    const inputId = id || generatedId;
     const errorId = `${inputId}-error`;
     const hintId = `${inputId}-hint`;
 

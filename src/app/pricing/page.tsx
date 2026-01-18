@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from "@/config";
 
 export const metadata = {
   title: `Pricing - ${siteConfig.siteName}`,

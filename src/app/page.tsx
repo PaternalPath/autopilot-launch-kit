@@ -9,7 +9,7 @@ import {
   Calendar,
   Settings,
 } from "lucide-react";
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from "@/config";
 
 export default function Home() {
   return (

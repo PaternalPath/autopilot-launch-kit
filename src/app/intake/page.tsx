@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { Download, CheckCircle } from "lucide-react";
 import { useToast } from "@/components/Toast";
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from "@/config";
 
 interface IntakeFormData {
   name: string;

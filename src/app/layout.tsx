@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ToastProvider } from "@/components/Toast";
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from "@/config";
 
 export const metadata: Metadata = {
   title: `${siteConfig.siteName} - ${siteConfig.tagline}`,

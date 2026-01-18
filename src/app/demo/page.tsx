@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Play, ExternalLink } from "lucide-react";
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from "@/config";
 
 export const metadata = {
   title: `Demo - ${siteConfig.siteName}`,

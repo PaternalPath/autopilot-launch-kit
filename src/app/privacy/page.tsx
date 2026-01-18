@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/config";
+import { siteConfig } from "@/config";
 
 export const metadata = {
   title: `Privacy Policy - ${siteConfig.siteName}`,

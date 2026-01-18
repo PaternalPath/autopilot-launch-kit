@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Play, ExternalLink } from "lucide-react";
+import { Play, ExternalLink, Code } from "lucide-react";
 import { siteConfig } from "@/config";
+import { StateDemo } from "@/components/StateDemo";
 
 export const metadata = {
   title: `Demo - ${siteConfig.siteName}`,
@@ -122,6 +123,21 @@ export default function DemoPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Developer Section - UI State Patterns */}
+        <div className="mt-16">
+          <div className="flex items-center gap-2">
+            <Code className="h-5 w-5 text-gray-400" aria-hidden="true" />
+            <h2 className="text-2xl font-bold text-gray-900">For Developers</h2>
+          </div>
+          <p className="mt-2 text-gray-600">
+            This template includes UI state patterns for data-fetching components.
+            Click the buttons below to see how each state renders.
+          </p>
+          <div className="mt-6">
+            <StateDemo />
           </div>
         </div>
 

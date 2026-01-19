@@ -86,8 +86,8 @@ test.describe("Smoke Tests", () => {
   test("intake page loads successfully", async ({ page }) => {
     await page.goto("/intake");
 
-    // Check the form is present
-    await expect(page.getByRole("textbox", { name: /name/i })).toBeVisible();
-    await expect(page.getByRole("textbox", { name: /email/i })).toBeVisible();
+    // Check the form is present by looking for specific form elements
+    await expect(page.locator('input#name')).toBeVisible();
+    await expect(page.locator('input#email')).toBeVisible();
   });
 });

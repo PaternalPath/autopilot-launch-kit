@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { Download, CheckCircle } from "lucide-react";
 import { useToast } from "@/components/Toast";
-import { siteConfig } from "@/config";
+import { siteConfig, STORAGE_KEYS } from "@/config";
 
 interface IntakeFormData {
   name: string;
@@ -16,8 +16,6 @@ interface IntakeFormData {
   notes: string;
   submittedAt: string;
 }
-
-const STORAGE_KEY = "intake-submissions";
 
 export default function IntakePage() {
   const { showToast } = useToast();
@@ -43,7 +41,7 @@ export default function IntakePage() {
     };
 
     // Get existing submissions from localStorage
-    const existingSubmissions = localStorage.getItem(STORAGE_KEY);
+    const existingSubmissions = localStorage.getItem(STORAGE_KEYS.INTAKE_SUBMISSIONS);
     const submissions: IntakeFormData[] = existingSubmissions
       ? JSON.parse(existingSubmissions)
       : [];
@@ -52,7 +50,7 @@ export default function IntakePage() {
     submissions.push(submission);
 
     // Save to localStorage
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(submissions));
+    localStorage.setItem(STORAGE_KEYS.INTAKE_SUBMISSIONS, JSON.stringify(submissions));
 
     // Show success toast
     showToast("Your request has been submitted successfully!");
@@ -62,7 +60,7 @@ export default function IntakePage() {
   };
 
   const handleDownloadJSON = () => {
-    const existingSubmissions = localStorage.getItem(STORAGE_KEY);
+    const existingSubmissions = localStorage.getItem(STORAGE_KEYS.INTAKE_SUBMISSIONS);
     const submissions: IntakeFormData[] = existingSubmissions
       ? JSON.parse(existingSubmissions)
       : [];
